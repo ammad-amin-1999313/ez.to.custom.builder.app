@@ -299,9 +299,9 @@ export function ThemeSelectorPage() {
           </div>
 
           <h1 className="mx-auto max-w-4xl text-balance text-5xl font-semibold tracking-[-0.04em] text-white sm:text-6xl md:text-7xl">
-            Pick your{" "}
+            Pick Your{" "}
             <span className="bg-gradient-to-r from-indigo-300 via-blue-400 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_0_24px_rgba(129,140,248,0.35)]">
-              theme
+              Theme
             </span>
           </h1>
 

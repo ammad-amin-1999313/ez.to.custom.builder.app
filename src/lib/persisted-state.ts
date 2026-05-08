@@ -18,8 +18,8 @@ export function pickPersistedState(state: BuilderState): PagePayload {
   return {
     profile: state.profile,
     blocks: state.blocks,
-    appearance: state.appearance as unknown as PagePayload["appearance"],
-    settings: state.settings as unknown as PagePayload["settings"],
+    appearance: state.appearance,
+    settings: state.settings,
     savedBlocks: state.savedBlocks,
     savedPalettes: state.savedPalettes,
     recentColors: state.recentColors,
@@ -27,5 +27,5 @@ export function pickPersistedState(state: BuilderState): PagePayload {
     onboardingStep: state.onboardingStep,
     previewMode: state.previewMode,
     activeTab: state.activeTab,
-  };
+  } as unknown as PagePayload;
 }

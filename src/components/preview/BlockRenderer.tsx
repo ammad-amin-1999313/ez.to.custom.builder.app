@@ -178,7 +178,7 @@ function PopupBlock({ block, appearance, compact, btnRadius }: {
         <p style={{ fontSize: compact ? 9 : 13, color: labelColor }}>
           {triggerLabel}
         </p>
-        {!compact && block.data.description && (
+        {!compact && !!block.data.description && (
           <p style={{ fontSize: 11, color: descColor }}>{block.data.description as string}</p>
         )}
       </div>
@@ -705,7 +705,7 @@ export function BlockRenderer({ block, profile, appearance, compact, btnRadius }
             <p style={{ color: "#fff", fontSize: compact ? 11 : 14, fontWeight: 500 }}>
               {(block.data.label as string) || "Link Title"}
             </p>
-            {!compact && block.data.description && (
+            {!compact && !!block.data.description && (
               <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 11, marginTop: 2 }}>
                 {block.data.description as string}
               </p>
@@ -724,7 +724,7 @@ export function BlockRenderer({ block, profile, appearance, compact, btnRadius }
           <p style={{ fontSize: compact ? 11 : 15, color: bsText, opacity: 0.9, fontWeight: 600, lineHeight: 1.3 }}>
             {(block.data.title as string) || "Heading"}
           </p>
-          {block.data.subtitle && (
+          {!!block.data.subtitle && (
             <p style={{ fontSize: compact ? 8 : 12, color: bsText, opacity: 0.5, lineHeight: 1.5, marginTop: compact ? 2 : 4 }}>
               {block.data.subtitle as string}
             </p>
@@ -739,7 +739,7 @@ export function BlockRenderer({ block, profile, appearance, compact, btnRadius }
       return (
         <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "4px 0" }}>
           <div style={{ flex: 1, height: 1, backgroundColor: lineColor }} />
-          {block.data.label && (
+          {!!block.data.label && (
             <span style={{ fontSize: compact ? 8 : 11, color: textColor, opacity: 0.4 }}>{block.data.label as string}</span>
           )}
           <div style={{ flex: 1, height: 1, backgroundColor: lineColor }} />
@@ -763,10 +763,10 @@ export function BlockRenderer({ block, profile, appearance, compact, btnRadius }
                 <ImageIcon style={{ width: compact ? 16 : 28, height: compact ? 16 : 28 }} />
                 {!compact && <p style={{ fontSize: 11, marginTop: 4 }}>Add a photo URL</p>}
               </div>}
-          {!compact && (block.data.title || block.data.description) && (
+          {!compact && !!(block.data.title || block.data.description) && (
             <div style={{ padding: "10px 14px" }}>
-              {block.data.title && <p style={{ fontSize: 13, color: titleColor, fontWeight: 500 }}>{block.data.title as string}</p>}
-              {block.data.description && <p style={{ fontSize: 11, color: descColor, marginTop: 3, lineHeight: 1.5 }}>{block.data.description as string}</p>}
+              {!!block.data.title && <p style={{ fontSize: 13, color: titleColor, fontWeight: 500 }}>{block.data.title as string}</p>}
+              {!!block.data.description && <p style={{ fontSize: 11, color: descColor, marginTop: 3, lineHeight: 1.5 }}>{block.data.description as string}</p>}
             </div>
           )}
         </div>
@@ -798,7 +798,7 @@ export function BlockRenderer({ block, profile, appearance, compact, btnRadius }
           <p style={{ fontSize: compact ? 8 : 12, color: primaryC, fontWeight: 600, marginTop: compact ? 4 : 8 }}>
             — {(block.data.author as string) || "Happy Customer"}
           </p>
-          {!compact && block.data.role && (
+          {!compact && !!block.data.role && (
             <p style={{ fontSize: 10, color: secondaryC, marginTop: 2 }}>{block.data.role as string}</p>
           )}
         </div>
@@ -988,7 +988,7 @@ export function BlockRenderer({ block, profile, appearance, compact, btnRadius }
         <div style={{ display: "flex", justifyContent: toFlexAlign(align) }}>
           <div style={{ backgroundColor: bgColor, borderRadius: cornerR, padding: compact ? "8px 12px" : "12px 20px", border, boxShadow, cursor: "pointer", textAlign: toTextAlign(align), minWidth: compact ? 0 : "60%" }}>
             <p style={{ color: labelC, fontSize: compact ? 11 : 14, fontWeight: 500 }}>{(block.data.label as string) || "Click Me"}</p>
-            {!compact && block.data.description && <p style={{ color: descC, fontSize: 11, marginTop: 2 }}>{block.data.description as string}</p>}
+            {!compact && !!block.data.description && <p style={{ color: descC, fontSize: 11, marginTop: 2 }}>{block.data.description as string}</p>}
           </div>
         </div>
       );
@@ -1040,8 +1040,8 @@ export function BlockRenderer({ block, profile, appearance, compact, btnRadius }
               </div>)}
           <div style={{ padding: compact ? "7px 10px" : "12px 14px" }}>
             <p style={{ fontSize: compact ? 10 : 14, color: textColor, fontWeight: 500 }}>{(block.data.title as string) || "Card Title"}</p>
-            {!compact && block.data.description && <p style={{ fontSize: 12, color: textColor, opacity: 0.55, marginTop: 4, lineHeight: 1.55 }}>{block.data.description as string}</p>}
-            {!compact && block.data.ctaLabel && (
+            {!compact && !!block.data.description && <p style={{ fontSize: 12, color: textColor, opacity: 0.55, marginTop: 4, lineHeight: 1.55 }}>{block.data.description as string}</p>}
+            {!compact && !!block.data.ctaLabel && (
               <div style={{ marginTop: 12, padding: "8px 0", textAlign: "center", color: "#fff", fontSize: 12, fontWeight: 500, backgroundColor: accentColor, borderRadius: 8 }}>
                 {block.data.ctaLabel as string}
               </div>

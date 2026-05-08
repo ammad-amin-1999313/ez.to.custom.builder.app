@@ -1,4 +1,4 @@
-import { ThemeSelectorPage } from "@/pages/ThemeSelectorPage";
+import { ThemeSelectorPage } from "@/page-components/ThemeSelectorPage";
 
 export default function Page() {
   return <ThemeSelectorPage />;

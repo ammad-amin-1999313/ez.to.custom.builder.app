@@ -27,6 +27,7 @@ import {
   StretchVertical,
   Plus,
   Link2,
+  type LucideIcon,
 } from "lucide-react";
 
 // ─── Block Definitions ────────────────────────────────────────────────────────
@@ -34,7 +35,7 @@ import {
 interface ModalBlockDef {
   type: BlockType | "add-block";
   label: string;
-  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  icon: LucideIcon;
   defaultData: Record<string, unknown>;
 }
 

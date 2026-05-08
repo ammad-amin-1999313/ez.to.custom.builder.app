@@ -10,7 +10,14 @@
       "Bash(rm -rf personal-page-builder-next/.next personal-page-builder-next/node_modules)",
       "Bash(rm -rf .vite)",
       "Bash(mv personal-page-builder-next/app personal-page-builder-next/src .)",
-      "Bash(rmdir personal-page-builder-next *)"
+      "Bash(rmdir personal-page-builder-next *)",
+      "Bash(dir src *)",
+      "Bash(dir src/pages)",
+      "Bash(dir)",
+      "Bash(findstr /I \"next package\")",
+      "Bash(dir app *)",
+      "Bash(dir app\\\\builder)",
+      "Bash(git mv *)"
     ]
   }
 }

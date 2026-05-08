@@ -372,7 +372,7 @@ export function BuilderPage() {
 
       {/* ── Modals ── */}
       <QRCodeModal  open={qrOpen}      onClose={() => setQrOpen(false)}      url={pageUrl} />
-      <PublishModal open={publishOpen} onClose={() => setPublishOpen(false)} />
+      <PublishModal open={publishOpen} onClose={() => setPublishOpen(false)} url={pageUrl} handle={profile.handle || "alexmorgan"} />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { BuilderPage } from "@/pages/BuilderPage";
+import { BuilderPage } from "@/page-components/BuilderPage";
 
 export default function Page() {
   return <BuilderPage />;

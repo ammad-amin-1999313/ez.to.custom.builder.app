@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { useBuilderStore } from "../../store/builderStore";
+import { useBuilderStore, type BuilderState } from "../../store/builderStore";
 import { BlockRenderer } from "../preview/BlockRenderer";
 import { X as XIcon } from "lucide-react";
 
@@ -174,15 +174,15 @@ interface FrameProps {
   bgValue: string | undefined;
   bgImageUrl: string;
   btnRadius: string;
-  visibleBlocks: ReturnType<typeof useBuilderStore>["blocks"];
+  visibleBlocks: BuilderState["blocks"];
   bgFilter: string | undefined;
   noise: boolean;
   anim: { initial: Variant; animate: Variant };
   showMenuButton: boolean;
   textColor: string;
   accentColor: string;
-  profile: ReturnType<typeof useBuilderStore>["profile"];
-  appearance: ReturnType<typeof useBuilderStore>["appearance"];
+  profile: BuilderState["profile"];
+  appearance: BuilderState["appearance"];
   animKey: number;
   resolvedFont: string;
 }

@@ -9,6 +9,7 @@ import {
   setBuilderUserScope,
   buildInitialState,
   BUILDER_STORAGE_NAME,
+  type BuilderState,
 } from "@/store/builderStore";
 import { useSyncStatus } from "@/store/syncStatusStore";
 import { getPage, migratePage } from "@/lib/api/page-client";
@@ -181,7 +182,7 @@ function ClerkApiBridge({ children }: { children: React.ReactNode }) {
           // DB wins. Switch persist bucket name (cache only) and overwrite
           // in-memory state with server data.
           setBuilderUserScope(newId, { rehydrate: false });
-          useBuilderStore.setState(result!.data!);
+          useBuilderStore.setState(result!.data! as Partial<BuilderState>);
           setHydratedFor(newId);
           lastHandledIdRef.current = newId;
           useSyncStatus.getState().setIdle();
@@ -307,7 +308,7 @@ function ClerkApiBridge({ children }: { children: React.ReactNode }) {
       setBuilderUserScope(userId, { rehydrate: false });
       const fresh = await getPage();
       if (fresh?.data) {
-        useBuilderStore.setState(fresh.data);
+        useBuilderStore.setState(fresh.data as Partial<BuilderState>);
       } else {
         useBuilderStore.setState(buildInitialState());
       }

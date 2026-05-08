@@ -372,7 +372,7 @@ function PhotoEditor({ block }: { block: Block }) {
       <Field label="Image URL">
         <Inp type="url" value={(block.data.src as string) || ""} onChange={e => up("src", e.target.value)} placeholder="https://…/photo.jpg" />
       </Field>
-      {block.data.src && (
+      {!!block.data.src && (
         <img src={block.data.src as string} alt="preview" className="w-full h-28 object-cover rounded-lg border border-zinc-700" />
       )}
       <Field label="Alt text">
@@ -932,7 +932,7 @@ function CardEditor({ block }: { block: Block }) {
       <Field label="Cover image URL (optional)">
         <Inp type="url" value={(block.data.image as string) || ""} onChange={e => up("image", e.target.value)} placeholder="https://…/image.jpg" />
       </Field>
-      {block.data.image && (
+      {!!block.data.image && (
         <img src={block.data.image as string} alt="preview" className="w-full h-20 object-cover rounded-lg border border-zinc-700" />
       )}
       <Field label="CTA button label (optional)">
