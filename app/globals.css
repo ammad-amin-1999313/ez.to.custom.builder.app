@@ -1,0 +1,9 @@
+@import "../src/styles/fonts.css";
+@import "../src/styles/tailwind.css";
+@import "../src/styles/theme.css";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}

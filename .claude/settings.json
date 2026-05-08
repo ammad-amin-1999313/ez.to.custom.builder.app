@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp -r \"c:/Users/HTS/Desktop/Personal Page Builder New Code/src/app/components\" \"c:/Users/HTS/Desktop/Personal Page Builder New Code/personal-page-builder-next/src/components\")",
+      "Bash(cp -r \"c:/Users/HTS/Desktop/Personal Page Builder New Code/src/app/store\" \"c:/Users/HTS/Desktop/Personal Page Builder New Code/personal-page-builder-next/src/store\")",
+      "Bash(cp -r \"c:/Users/HTS/Desktop/Personal Page Builder New Code/src/app/pages\" \"c:/Users/HTS/Desktop/Personal Page Builder New Code/personal-page-builder-next/src/pages\")",
+      "Bash(cp -r \"c:/Users/HTS/Desktop/Personal Page Builder New Code/src/styles\" \"c:/Users/HTS/Desktop/Personal Page Builder New Code/personal-page-builder-next/src/styles\")",
+      "Bash(rm -rf src/ node_modules/)",
+      "Bash(rm -f index.html vite.config.ts package.json package-lock.json postcss.config.mjs .env README.md ATTRIBUTIONS.md)",
+      "Bash(rm -rf personal-page-builder-next/.next personal-page-builder-next/node_modules)",
+      "Bash(rm -rf .vite)",
+      "Bash(mv personal-page-builder-next/app personal-page-builder-next/src .)",
+      "Bash(rmdir personal-page-builder-next *)"
+    ]
+  }
+}
